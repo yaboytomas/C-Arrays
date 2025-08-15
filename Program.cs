@@ -1,15 +1,9 @@
-﻿using System.Runtime.CompilerServices;
+﻿string[] orderIDs = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
 
-int[] inventory = { 200, 450, 700, 175, 250 };
-
-int sum = 0;
-int bin = 0;
-
-foreach (int items in inventory)
+foreach (string orderID in orderIDs)
 {
-    sum += items;
-    bin++;
-    Console.WriteLine($"Bin {bin} = {items} (Running total: {sum})");
+    if (orderID.StartsWith("B"))
+    {
+        Console.WriteLine($"Found potential fraudulent order: {orderID}");
+    }
 }
-
-Console.WriteLine($"We have {sum} items in inventory.");
