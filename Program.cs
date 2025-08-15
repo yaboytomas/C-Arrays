@@ -1,17 +1,15 @@
-﻿//string[] fraudulentOrderIDs = new string[3];
+﻿using System.Runtime.CompilerServices;
 
-//fraudulentOrderIDs[0] = "A123";
-//fraudulentOrderIDs[1] = "B456";
-//fraudulentOrderIDs[2] = "C789";
-//fraudulentOrderIDs[3] = "D000"; 
-string[] fraudulentOrderIDs = [ "A123", "B456", "C789" ];
+int[] inventory = { 200, 450, 700, 175, 250 };
 
-Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
-Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
-Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+int sum = 0;
+int bin = 0;
 
-fraudulentOrderIDs[0] = "F000";
+foreach (int items in inventory)
+{
+    sum += items;
+    bin++;
+    Console.WriteLine($"Bin {bin} = {items} (Running total: {sum})");
+}
 
-Console.WriteLine($"Reassigned First: {fraudulentOrderIDs[0]}");
-
-Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent order IDs.");
+Console.WriteLine($"We have {sum} items in inventory.");
